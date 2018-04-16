@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Business.Interfaces;
 using Core.NamespaceVirtualization;
 using Microsoft.CodeAnalysis;
@@ -17,15 +18,24 @@ namespace Business.ModelListGenerator
 
         public IEnumerable<NamespaceDeclarationSyntax> GetModelList(Compilation compiledProject)
         {
-            var sample = new HashSet<NamespaceDeclarationSyntax>();
+            
             var namespaces = new List<NamespaceDeclarationSyntax>();
             _cSharpSyntaxRewriterWrapper.Namespaces = new List<NamespaceDeclarationSyntax>();
             foreach (var syntaxTree in compiledProject.SyntaxTrees)
             {
+
                 _cSharpSyntaxRewriterWrapper.Visit(syntaxTree.GetRoot());
+                foreach (var nmps in _cSharpSyntaxRewriterWrapper.Namespaces)
+                {
+                   if(!namespaces.Any(x=>x.SyntaxTree.Equals(nmps.SyntaxTree)))
+                    {
+                        namespaces.Add(nmps);
+                    }
+                   
+                }
             }
-            namespaces.AddRange(_cSharpSyntaxRewriterWrapper.Namespaces);
-            return namespaces;
+           return namespaces;
+             
         }
     }
 }
