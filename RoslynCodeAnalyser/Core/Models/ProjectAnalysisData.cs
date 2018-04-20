@@ -7,7 +7,8 @@ namespace Core.Models
     {
         public Project Project { get; set; }
         public Compilation CompiledProject { get; set; }
-
-        public List<NamspaceAnalysisData> Namespances = new List<NamspaceAnalysisData>();
+        public List<ClassAnalysisData> Classes = new List<ClassAnalysisData>();
+        public List<InterfaceAnalysisData> Interfaces = new List<InterfaceAnalysisData>();
+        //public List<NamspaceAnalysisData> Namespances = new List<NamspaceAnalysisData>();
     }
 }

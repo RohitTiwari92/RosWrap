@@ -13,38 +13,35 @@ namespace Business
         private readonly ISyntaxNodeHelper _syntaxNodeHelper;
         private readonly IMethodAnalyser<InterfaceDeclarationSyntax> _methodAnalyser;
         private readonly IModelListGetter<InterfaceDeclarationSyntax> _modelListGetter;
-
+        private readonly INameSpaceAnalyser _namespaceAnalyser;
 
         public InterfaceAnalyser(ISyntaxNodeHelper syntaxNodeHelper,
             IMethodAnalyser<InterfaceDeclarationSyntax> methodAnalyser,
-            IModelListGetter<InterfaceDeclarationSyntax> modelListGetter)
+            IModelListGetter<InterfaceDeclarationSyntax> modelListGetter,
+            INameSpaceAnalyser namespaceAnalyser)
         {
             _syntaxNodeHelper = syntaxNodeHelper;
             _methodAnalyser = methodAnalyser;
             _modelListGetter = modelListGetter;
+            _namespaceAnalyser = namespaceAnalyser;
         }
 
-        public IList<InterfaceAnalysisData> Analysis(Compilation compiledProject, string inputNamespaceName)
+        public IList<InterfaceAnalysisData> Analysis(Compilation compiledProject)
         {
             var result = new List<InterfaceAnalysisData>();
             var interfaces = _modelListGetter.GetModelList(compiledProject);
             foreach (var item in interfaces)
             {
-                NamespaceDeclarationSyntax namespaceDeclarationSyntax;
-                if (!_syntaxNodeHelper.TryGetParentSyntax(item, out namespaceDeclarationSyntax))
-                    continue;
-
-                var namespaceName = namespaceDeclarationSyntax.Name.ToString();
-                if (inputNamespaceName.Equals(namespaceName))
-                {
+               
                     var mtdModelList = _methodAnalyser.Analyze(item);
                     var interfaceModel = new InterfaceAnalysisData
                     {
                         InterfaceDeclarationSyntax = item,
-                        Methods = mtdModelList.ToList()
+                        Methods = mtdModelList.ToList(),
+                        Namespace = _namespaceAnalyser.Analyse(item)
                     };
                     result.Add(interfaceModel);
-                }
+                
             }
             return result;
         }

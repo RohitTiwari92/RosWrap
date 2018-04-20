@@ -6,6 +6,6 @@ namespace Business.Interfaces
 {
     public interface IClassAnalyser
     {
-        IList<ClassAnalysisData> Analysis(Compilation compiledProject, string inputNamespaceName);
+        IList<ClassAnalysisData> Analysis(Compilation compiledProject);
     }
 }

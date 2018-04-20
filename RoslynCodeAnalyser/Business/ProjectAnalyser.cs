@@ -10,10 +10,12 @@ namespace Business
     public class ProjectAnalyser : IProjectAnalyser
     {
         private readonly INameSpaceAnalyser _namespaceAnalyser;
-
-        public ProjectAnalyser(INameSpaceAnalyser namespaceAnalyser)
+        private readonly IClassAnalyser _classAnalyser;
+        private readonly IInterfaceAnalyser _interfaceAnalyser;
+        public ProjectAnalyser(IClassAnalyser classAnalyser, IInterfaceAnalyser interfaceAnalyser)
         {
-            _namespaceAnalyser = namespaceAnalyser;
+            _classAnalyser = classAnalyser;
+            _interfaceAnalyser = interfaceAnalyser;
         }
 
         public IList<ProjectAnalysisData> Analyse(Solution solutionAst)
@@ -27,7 +29,9 @@ namespace Business
                 {
                     CompiledProject = project.GetCompilationAsync().Result,
                     Project = project,
-                    Namespances = _namespaceAnalyser.Analyse(project.GetCompilationAsync().Result).ToList()
+                    Classes = _classAnalyser.Analysis(project.GetCompilationAsync().Result).ToList(),
+                    Interfaces = _interfaceAnalyser.Analysis(project.GetCompilationAsync().Result).ToList()
+                    
                 };
 
                 projectAnalysisDataList.Add(projectAnalysisData);

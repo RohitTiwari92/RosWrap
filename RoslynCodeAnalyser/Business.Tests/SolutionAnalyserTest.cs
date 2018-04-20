@@ -15,7 +15,7 @@ namespace Business.Tests
             container.Configure(p => { p.AddRegistry<BusinessRegistry>();});
 
             var solutionAnalyser = container.GetInstance<ISolutionAnalyser>();
-            var result = solutionAnalyser.Analyse(@"C:\Users\j.kochekkan\Documents\visual studio 2015\Projects\ConsoleApplication4\ConsoleApplication4.sln");
+            var result = solutionAnalyser.Analyse(@"D:\Rohit\PRoject\RoslynSimplifiedforCodeAnalysis\RoslynSimplifiedforCodeAnalysis\HelperTestSubject\HelperTestSubject.sln");
             
             Assert.IsTrue(result != null);    
         }

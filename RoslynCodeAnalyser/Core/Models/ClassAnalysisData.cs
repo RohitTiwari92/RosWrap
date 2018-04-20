@@ -8,5 +8,6 @@ namespace Core.Models
         public ClassDeclarationSyntax ClassDeclarationSyntax { get; set; }
         public List<MethodAnalyseData> Methods = new List<MethodAnalyseData>();
         public List<PropertyAnalysisData> Properties = new List<PropertyAnalysisData>();
+        public NamspaceAnalysisData Namespace = new NamspaceAnalysisData();
     }
 }
