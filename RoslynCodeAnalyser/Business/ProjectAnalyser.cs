@@ -18,11 +18,18 @@ namespace Business
             _interfaceAnalyser = interfaceAnalyser;
         }
 
-        public IList<ProjectAnalysisData> Analyse(Solution solutionAst)
+        public IList<ProjectAnalysisData> Analyse(Solution solutionAst,List<string> PrjList=null)
         {
             var projectAnalysisDataList = new List<ProjectAnalysisData>();
-            var projectList = solutionAst.Projects.ToList();
-
+            List<Project> projectList;
+            if (PrjList == null)
+            {
+                 projectList = solutionAst.Projects.ToList();
+            }
+            else
+            {
+                projectList = solutionAst.Projects.Where(x=>(PrjList.Contains( x.Name))).ToList();
+            }
             foreach (var project in projectList)
             {
                 var projectAnalysisData = new ProjectAnalysisData
