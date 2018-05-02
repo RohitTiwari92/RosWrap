@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Rules.Rule
 {
-    public class GetMethodparametersRule
+    public class MethodparametersRule
     {
         public int GetMethodparametersCount(MethodDeclarationSyntax methodDeclarationSyntax)
         {

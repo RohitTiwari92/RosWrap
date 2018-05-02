@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9FEFABE-6D8E-4E4E-AA54-50EACE3B82BD}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{77E0A76A-CB3D-405B-BAE2-7AEE14087497}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Core</RootNamespace>
-    <AssemblyName>Core</AssemblyName>
+    <RootNamespace>TestCallerConsole</RootNamespace>
+    <AssemblyName>TestCallerConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -195,32 +197,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassVirtualization\ClassVirtualizationVisitor.cs" />
-    <Compile Include="ClassVirtualization\CSharpSyntaxRewriterWrapperForClass.cs" />
-    <Compile Include="Helper\Interfaces\ISyntaxNodeHelper.cs" />
-    <Compile Include="Helper\SyntaxNodeHelper.cs" />
-    <Compile Include="InterfaceVirtualization\CSharpSyntaxRewriterWrapperForInterface.cs" />
-    <Compile Include="InterfaceVirtualization\InterfaceVirtualizationVisitor.cs" />
-    <Compile Include="Models\ClassAnalysisData.cs" />
-    <Compile Include="Models\InterfaceAnalysisData.cs" />
-    <Compile Include="Models\MethodAnalyseData.cs" />
-    <Compile Include="Models\NamspaceAnalysisData.cs" />
-    <Compile Include="Models\ProjectAnalysisData.cs" />
-    <Compile Include="Models\PropertyAnalysisData.cs" />
-    <Compile Include="Models\SolutionAnalysisData.cs" />
-    <Compile Include="NamespaceVirtualization\CSharpSyntaxRewriterWrapperForNamespace.cs" />
-    <Compile Include="NamespaceVirtualization\NamespaceVirtualizationVisitor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RosWrap\RosWrap.csproj">
+      <Project>{3dfacb0f-5903-4742-8d0a-6d2ff4bf4eee}</Project>
+      <Name>RosWrap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rules\Rules.csproj">
+      <Project>{d66a140c-0f0d-485c-843e-d5e2fd9fc3ee}</Project>
+      <Name>Rules</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

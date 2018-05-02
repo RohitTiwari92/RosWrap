@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Tests", "Business.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rules", "Rules\Rules.csproj", "{D66A140C-0F0D-485C-843E-D5E2FD9FC3EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosWrap", "RosWrap\RosWrap.csproj", "{3DFACB0F-5903-4742-8D0A-6D2FF4BF4EEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCallerConsole", "TestCallerConsole\TestCallerConsole.csproj", "{77E0A76A-CB3D-405B-BAE2-7AEE14087497}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{D66A140C-0F0D-485C-843E-D5E2FD9FC3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D66A140C-0F0D-485C-843E-D5E2FD9FC3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D66A140C-0F0D-485C-843E-D5E2FD9FC3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DFACB0F-5903-4742-8D0A-6D2FF4BF4EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFACB0F-5903-4742-8D0A-6D2FF4BF4EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFACB0F-5903-4742-8D0A-6D2FF4BF4EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFACB0F-5903-4742-8D0A-6D2FF4BF4EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E0A76A-CB3D-405B-BAE2-7AEE14087497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E0A76A-CB3D-405B-BAE2-7AEE14087497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E0A76A-CB3D-405B-BAE2-7AEE14087497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E0A76A-CB3D-405B-BAE2-7AEE14087497}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

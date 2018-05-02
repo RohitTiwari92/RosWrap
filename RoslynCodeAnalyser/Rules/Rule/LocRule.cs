@@ -8,11 +8,11 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Rules.Rule
 {
-    public class GetLocRule
+    public class LocRule
     {
         public int GetLocCount(SyntaxNode node)
         {
-            var classtext = node.SyntaxTree.GetText();
+            var classtext = node.GetText();
             return classtext.Lines.Count;
         }
     }

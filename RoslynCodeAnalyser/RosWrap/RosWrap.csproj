@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9FEFABE-6D8E-4E4E-AA54-50EACE3B82BD}</ProjectGuid>
+    <ProjectGuid>{3DFACB0F-5903-4742-8D0A-6D2FF4BF4EEE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Core</RootNamespace>
-    <AssemblyName>Core</AssemblyName>
+    <RootNamespace>RosWrap</RootNamespace>
+    <AssemblyName>RosWrap</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -195,22 +194,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassVirtualization\ClassVirtualizationVisitor.cs" />
-    <Compile Include="ClassVirtualization\CSharpSyntaxRewriterWrapperForClass.cs" />
-    <Compile Include="Helper\Interfaces\ISyntaxNodeHelper.cs" />
-    <Compile Include="Helper\SyntaxNodeHelper.cs" />
-    <Compile Include="InterfaceVirtualization\CSharpSyntaxRewriterWrapperForInterface.cs" />
-    <Compile Include="InterfaceVirtualization\InterfaceVirtualizationVisitor.cs" />
-    <Compile Include="Models\ClassAnalysisData.cs" />
-    <Compile Include="Models\InterfaceAnalysisData.cs" />
-    <Compile Include="Models\MethodAnalyseData.cs" />
-    <Compile Include="Models\NamspaceAnalysisData.cs" />
-    <Compile Include="Models\ProjectAnalysisData.cs" />
-    <Compile Include="Models\PropertyAnalysisData.cs" />
-    <Compile Include="Models\SolutionAnalysisData.cs" />
-    <Compile Include="NamespaceVirtualization\CSharpSyntaxRewriterWrapperForNamespace.cs" />
-    <Compile Include="NamespaceVirtualization\NamespaceVirtualizationVisitor.cs" />
+    <Compile Include="Analyser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rules\Rules.csproj">
+      <Project>{d66a140c-0f0d-485c-843e-d5e2fd9fc3ee}</Project>
+      <Name>Rules</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -220,7 +211,6 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -15,6 +15,6 @@ namespace Rules.Model
         public int Loc { get; set; }
 
         public List<MethodMetrics> MethodMetricses =new List<MethodMetrics>();
-        public string Projectname { get; set; }
+
     }
 }
