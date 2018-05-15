@@ -198,6 +198,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IOModel\InputModel.cs" />
+    <Compile Include="IOModel\Outputmodel.cs" />
     <Compile Include="Model\ClassMetrics.cs" />
     <Compile Include="Model\MethodMetrics.cs" />
     <Compile Include="Model\ProjectMetrics.cs" />
