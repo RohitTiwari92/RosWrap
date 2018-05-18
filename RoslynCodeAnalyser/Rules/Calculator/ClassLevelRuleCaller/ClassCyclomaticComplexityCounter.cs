@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Core.Models;
+using Microsoft.CodeAnalysis;
+using Rules.Model;
+using Rules.Rule;
+
+namespace Rules.Calculator.ClassLevelRuleCaller
+{
+   public class ClassCyclomaticComplexityCounter : IClassMetricscalculator
+    {
+       public void CalculateClassMetrics(ProjectAnalysisData prj, ClassMetrics clsMetrics, ClassAnalysisData cls,
+           SemanticModel sclsmodel)
+       {
+            CyclomaticComplexityCounter cc=new CyclomaticComplexityCounter();
+            clsMetrics.CyclomaticComplexity= cc.Calculate(cls.ClassDeclarationSyntax, sclsmodel);
+       }
+    }
+}

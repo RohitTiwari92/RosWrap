@@ -198,6 +198,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator\AnalyzeClassMetrics.cs" />
+    <Compile Include="Calculator\AnalyzeInterfaceMetrics.cs" />
+    <Compile Include="Calculator\ClassLevelRuleCaller\ClassCyclomaticComplexityCounter.cs" />
+    <Compile Include="Calculator\ClassLevelRuleCaller\ClassLocRule.cs" />
+    <Compile Include="Calculator\ClassMetricscalculator.cs" />
+    <Compile Include="Calculator\ClassLevelRuleCaller\IClassMetricscalculator.cs" />
     <Compile Include="IOModel\InputModel.cs" />
     <Compile Include="IOModel\Outputmodel.cs" />
     <Compile Include="Model\ClassMetrics.cs" />
@@ -227,6 +233,7 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
