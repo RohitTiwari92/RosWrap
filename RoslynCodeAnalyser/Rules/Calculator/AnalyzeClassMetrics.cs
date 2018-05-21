@@ -40,20 +40,8 @@ namespace Rules.Calculator
         }
         private static void AnalyzeMethod(ProjectAnalysisData prj, ClassAnalysisData cls, ClassMetrics clsMetrics)
         {
-            foreach (var mtd in cls.Methods)
-            {
-                CyclomaticComplexityCounter cyclomaticComplexityCounter = new CyclomaticComplexityCounter();
-                LocRule locRule = new LocRule();
-                MethodMetrics mtdMetrics = new MethodMetrics();
-                mtdMetrics.Loc = locRule.GetLocCount(mtd.MethodDeclarationSyntax);
-                SemanticModel smtdmodel =
-                    prj.CompiledProject.GetSemanticModel(cls.ClassDeclarationSyntax.SyntaxTree);
-                mtdMetrics.CyclomaticComplexity =
-                    cyclomaticComplexityCounter.Calculate(mtd.MethodDeclarationSyntax, smtdmodel);
-                MethodparametersRule mtdprmrule = new MethodparametersRule();
-                mtdMetrics.Methodparameters = mtdprmrule.GetMethodparametersCount(mtd.MethodDeclarationSyntax);
-                clsMetrics.MethodMetricses.Add(mtdMetrics);
-            }
+            MethodMetricscalculator mmc=new MethodMetricscalculator();
+            mmc.Calculate(prj,clsMetrics,cls);     
         }
 
     }

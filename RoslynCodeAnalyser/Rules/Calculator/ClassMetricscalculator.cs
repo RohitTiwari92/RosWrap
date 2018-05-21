@@ -8,7 +8,7 @@ namespace Rules.Calculator
 {
    public class ClassMetricscalculator
     {
-        List<IClassMetricscalculator> _rulesList =new List<IClassMetricscalculator>();
+       readonly List<IClassMetricscalculator> _rulesList =new List<IClassMetricscalculator>();
        public ClassMetricscalculator()
        {
            _rulesList.Add(new ClassCyclomaticComplexityCounter());

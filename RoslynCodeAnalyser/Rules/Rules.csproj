@@ -204,6 +204,11 @@
     <Compile Include="Calculator\ClassLevelRuleCaller\ClassLocRule.cs" />
     <Compile Include="Calculator\ClassMetricscalculator.cs" />
     <Compile Include="Calculator\ClassLevelRuleCaller\IClassMetricscalculator.cs" />
+    <Compile Include="Calculator\MethodLevelRuleCaller\IMethodMetricscalculator.cs" />
+    <Compile Include="Calculator\MethodLevelRuleCaller\MethodCyclomaticComplexityCounter.cs" />
+    <Compile Include="Calculator\MethodLevelRuleCaller\MethodLocRule.cs" />
+    <Compile Include="Calculator\MethodLevelRuleCaller\MethodparametersRule.cs" />
+    <Compile Include="Calculator\MethodMetricscalculator.cs" />
     <Compile Include="IOModel\InputModel.cs" />
     <Compile Include="IOModel\Outputmodel.cs" />
     <Compile Include="Model\ClassMetrics.cs" />
