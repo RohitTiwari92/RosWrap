@@ -201,7 +201,8 @@
     <Compile Include="Calculator\AnalyzeClassMetrics.cs" />
     <Compile Include="Calculator\AnalyzeInterfaceMetrics.cs" />
     <Compile Include="Calculator\ClassLevelRuleCaller\ClassCyclomaticComplexityCounter.cs" />
-    <Compile Include="Calculator\ClassLevelRuleCaller\ClassLocRule.cs" />
+    <Compile Include="Calculator\ClassLevelRuleCaller\ClassDepthOfInheritanceCounter.cs" />
+    <Compile Include="Calculator\ClassLevelRuleCaller\ClassLocCounter.cs" />
     <Compile Include="Calculator\ClassMetricscalculator.cs" />
     <Compile Include="Calculator\ClassLevelRuleCaller\IClassMetricscalculator.cs" />
     <Compile Include="Calculator\MethodLevelRuleCaller\IMethodMetricscalculator.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Calculator\MethodLevelRuleCaller\MethodLocRule.cs" />
     <Compile Include="Calculator\MethodLevelRuleCaller\MethodparametersRule.cs" />
     <Compile Include="Calculator\MethodMetricscalculator.cs" />
+    <Compile Include="DiRegistry\BusinessRegistry.cs" />
     <Compile Include="IOModel\InputModel.cs" />
     <Compile Include="IOModel\Outputmodel.cs" />
     <Compile Include="Model\ClassMetrics.cs" />
@@ -216,8 +218,9 @@
     <Compile Include="Model\ProjectMetrics.cs" />
     <Compile Include="Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rule\DepthOfInheritanceRule.cs" />
     <Compile Include="Rule\LocRule.cs" />
-    <Compile Include="Rule\CyclomaticComplexityCounter.cs" />
+    <Compile Include="Rule\CyclomaticComplexityRule.cs" />
     <Compile Include="Rule\MethodparametersRule.cs" />
   </ItemGroup>
   <ItemGroup>

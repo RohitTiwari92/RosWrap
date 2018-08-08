@@ -12,7 +12,8 @@ namespace Rules.Calculator
        public ClassMetricscalculator()
        {
            _rulesList.Add(new ClassCyclomaticComplexityCounter());
-           _rulesList.Add(new ClassLocRule());
+           _rulesList.Add(new ClassLocCounter());
+            _rulesList.Add(new ClassDepthOfInheritanceCounter());
        }
 
        public void Calculate(ProjectAnalysisData prj, ClassMetrics clsMetrics, ClassAnalysisData cls)
@@ -21,6 +22,7 @@ namespace Rules.Calculator
             clsMetrics.Classdocpath = cls.ClassDeclarationSyntax.SyntaxTree.FilePath;
             clsMetrics.Namespacename = cls.Namespace.Namespacedeclaration.Name.ToString();
             SemanticModel sclsmodel = prj.CompiledProject.GetSemanticModel(cls.ClassDeclarationSyntax.SyntaxTree);
+            
            foreach (var rule in _rulesList)
            {
                rule.CalculateClassMetrics(prj,clsMetrics,cls,sclsmodel);

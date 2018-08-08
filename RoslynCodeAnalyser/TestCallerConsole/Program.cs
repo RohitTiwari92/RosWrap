@@ -19,7 +19,7 @@ namespace TestCallerConsole
                 Console.WriteLine(result.Projectname);
                 foreach (var cls in result.ClassMetrics)
                 {
-                    Console.WriteLine(cls.Classname + " : " +  cls.Loc + " Cyclomatic Complexity : "+cls.CyclomaticComplexity);
+                    Console.WriteLine(cls.Classname + " : " +  cls.Loc + " DOI : "+cls.DOI);
                 }
             }
             Console.ReadKey();

@@ -16,5 +16,7 @@ namespace Rules.Model
 
         public List<MethodMetrics> MethodMetricses =new List<MethodMetrics>();
 
+        public int DOI { get; set; }
+
     }
 }

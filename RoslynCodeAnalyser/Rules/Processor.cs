@@ -11,6 +11,7 @@ using Microsoft.CodeAnalysis;
 using Rules.Model;
 using Rules.Rule;
 using Rules.Calculator;
+//using BusinessRegistry = Rules.DiRegistry.BusinessRegistry;
 
 namespace Rules
 {

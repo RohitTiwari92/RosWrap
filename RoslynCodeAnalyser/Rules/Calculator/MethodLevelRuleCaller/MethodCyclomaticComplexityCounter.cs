@@ -16,7 +16,7 @@ namespace Rules.Calculator.MethodLevelRuleCaller
         public void CalculateMethodMetrics(ProjectAnalysisData prj, ClassMetrics clsMetrics, ClassAnalysisData cls,
             MethodMetrics mtdMetrics, MethodDeclarationSyntax mtd, SemanticModel sclsmodel)
         {
-            CyclomaticComplexityCounter cc = new CyclomaticComplexityCounter();
+            CyclomaticComplexityRule cc = new CyclomaticComplexityRule();
             mtdMetrics.CyclomaticComplexity = cc.Calculate(mtd, sclsmodel);
         }
     }

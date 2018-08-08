@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Rules.Rule
 {
-   public class CyclomaticComplexityCounter : CSharpSyntaxWalker
+   public class CyclomaticComplexityRule : CSharpSyntaxWalker
     {
 
         public int Calculate(SyntaxNode node, SemanticModel semanticModel)

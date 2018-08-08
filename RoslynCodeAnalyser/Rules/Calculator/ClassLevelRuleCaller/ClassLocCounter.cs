@@ -11,7 +11,7 @@ using Rules.Rule;
 namespace Rules.Calculator.ClassLevelRuleCaller
 {
     
-     public   class ClassLocRule : IClassMetricscalculator
+     public   class ClassLocCounter : IClassMetricscalculator
     {
       public void CalculateClassMetrics(ProjectAnalysisData prj, ClassMetrics clsMetrics, ClassAnalysisData cls,
           SemanticModel sclsmodel)
